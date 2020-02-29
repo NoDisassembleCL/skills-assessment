@@ -4,6 +4,8 @@ body {
     line-height: 1.25em;
 }
 
+/******* WIDGET ************/
+
 .contacts-widget {
     width: 100%;
     max-width: 375px;
@@ -19,11 +21,11 @@ body {
 /******** TITLE ***********/
 .contacts-widget h2 {
     font-size: 1.25em;
-    color: #FFFFFF;
     padding: 1em;
     margin: 0;
     background-color: #000000;
     background: linear-gradient( #444444, rgba( 68, 68, 68, 0.21 ) );
+    color: #FFFFFF;
     border-radius: 0.75em 0.75em 0 0;
     -webkit-border-radius: 0.75em 0.75em 0 0;
     -moz-border-radius: 0.75em 0.75em 0 0;
@@ -53,14 +55,6 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 3em;
-}
-
-.contacts-widget .contacts-users .contacts-user:hover {
-    background-color: #444444;
-}
-
-.contacts-widget .contacts-users:hover .contacts-user:not(:hover) * {
-    opacity: 0.5;
 }
 
 /******** STATUS ***************/
@@ -99,16 +93,16 @@ body {
 
 /********** INFO *************/
 .contacts-widget .contacts-contact-info {
-    width: 50%;
     align-self: flex-start;
-    list-style: none;
-    margin: 0;
-    padding: 0.75em 1em;
-    max-height: 2em;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between;    
+    width: 50%;
+    max-height: 1.25em;
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0.75em 1em;    
     transition: max-height 0;
     -webkit-transition: max-height 0;
     -moz-transition: max-height 0;
@@ -116,26 +110,14 @@ body {
     -o-transition: max-height 0;
 }
 
-.contacts-widget .contacts-user:hover .contacts-contact-info {
-    transition: max-height 2s ease-out;
-    -webkit-transition: max-height 2s ease-in;
-    -moz-transition: max-height 2s ease-out;
-    -ms-transition: max-height 2s ease-out;
-    -o-transition: max-height 2s ease-out;
-    max-height: 50em;
-    position: relative;
-    top: 0;
-    background-color: #444444;
-    z-index: 2;
-}
-
-.contacts-widget .contacts-user:hover .contacts-contact-info li {
-    color: #FFFFFF;
+.contacts-widget .contacts-contact-info li,
+.contacts-widget .contacts-contact-info li a {
+    color: #565656;
+    text-decoration: none;
 }
 
 .contacts-widget .contacts-contact-info li {
     margin-bottom: 1.5em;
-    color: #565656;
 }
 
 .contacts-widget .contacts-contact-info li:last-of-type {
@@ -150,6 +132,7 @@ body {
     order: -1;
 }
 
+/********** FOOTER **********/
 .contacts-widget .contacts-footer {
     text-align: right;
     background-color: #2c2c2c;
@@ -161,7 +144,51 @@ body {
 }
 
 .contacts-widget .contacts-info-switch {
+    padding: 0.25em 0.5em;
     margin: 1.25em;
 }
 
-/******** OVERLAY *********************/
+/************** HOVERING **************/
+.contacts-widget .contacts-users .contacts-user:hover,
+.contacts-widget .contacts-users .contacts-user:focus {
+    background-color: #444444;
+}
+
+.contacts-widget .contacts-users:hover .contacts-user:not(:hover) *,
+.contacts-widget .contacts-users:focus .contacts-user:not(:focus) * {
+    opacity: 0.5;
+}
+
+.contacts-widget .contacts-user:hover .contacts-contact-info,
+.contacts-widget .contacts-user:focus .contacts-contact-info {
+    transition: max-height 2s ease-out;
+    -webkit-transition: max-height 2s ease-in;
+    -moz-transition: max-height 2s ease-out;
+    -ms-transition: max-height 2s ease-out;
+    -o-transition: max-height 2s ease-out;
+    max-height: 50em;
+    position: relative;
+    top: 0;
+    background-color: #444444;
+    z-index: 2;
+}
+
+.contacts-widget .contacts-user:hover .contacts-contact-info li,
+.contacts-widget .contacts-user:hover .contacts-contact-info li a,
+.contacts-widget .contacts-user:focus .contacts-contact-info li,
+.contacts-widget .contacts-user:focus .contacts-contact-info li a {
+    color: #FFFFFF;
+}
+
+.contacts-widget .contacts-user:hover .contacts-contact-info li a,
+.contacts-widget .contacts-user:focus .contacts-contact-info li a  {
+    text-decoration: underline;
+    color: #00f6ff;
+}
+
+.contacts-widget .contacts-user:hover .contacts-contact-info li a:hover,
+.contacts-widget .contacts-user:hover .contacts-contact-info li a:focus,
+.contacts-widget .contacts-user:focus .contacts-contact-info li a:hover,
+.contacts-widget .contacts-user:focus .contacts-contact-info li a:focus {
+    color: #FFFFFF;
+}

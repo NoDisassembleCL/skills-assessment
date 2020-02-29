@@ -1,22 +1,24 @@
 HookContactInfoEvent();
 
 function HookContactInfoEvent() {
-    var infoTypeDropdown = document.querySelector( ".contacts-widget .contacts-info-switch" );
+    var infoTypeDropdowns = document.querySelectorAll( ".contacts-widget .contacts-info-switch" );
 
-    if( infoTypeDropdown ) {
-        infoTypeDropdown.addEventListener( "change", SwitchContactInfo );
+    if( infoTypeDropdowns.length > 0 ) {
+        for( var i = 0; i < infoTypeDropdowns.length; i++ ) {
+            infoTypeDropdowns[ i ].addEventListener( "change", SwitchContactInfo );
+        }
     }
 }
 
 function SwitchContactInfo( event ) {
     var chosenOptionIndex = this.selectedIndex;
 
-    SwapContactInfo( this.options[ chosenOptionIndex ].value );
+    SwapContactInfo( this.options[ chosenOptionIndex ].value, this.parentNode.parentNode );
 }
 
-function SwapContactInfo( primaryOption ) {
-    var emailOptions = document.querySelectorAll( ".contacts-widget .contacts-contact-info .contacts-email" );
-    var phoneOptions = document.querySelectorAll( ".contacts-widget .contacts-contact-info .contacts-phone" );
+function SwapContactInfo( primaryOption, parentWidget ) {
+    var emailOptions = parentWidget.querySelectorAll( ".contacts-widget .contacts-contact-info .contacts-email" );
+    var phoneOptions = parentWidget.querySelectorAll( ".contacts-widget .contacts-contact-info .contacts-phone" );
 
     for( var i = 0; i < emailOptions.length; i++ ) {
         if( primaryOption === "email" ) {
