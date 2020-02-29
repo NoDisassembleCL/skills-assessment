@@ -1,0 +1,167 @@
+body {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.25em;
+}
+
+.contacts-widget {
+    width: 100%;
+    max-width: 375px;
+    background: #131313;
+    border: 2px solid #4d4d4d;
+    border-radius: 1.5em;
+    -webkit-border-radius: 1.5em;
+    -moz-border-radius: 1.5em;
+    -ms-border-radius: 1.5em;
+    -o-border-radius: 1.5em;
+}
+
+/******** TITLE ***********/
+.contacts-widget h2 {
+    font-size: 1.25em;
+    color: #FFFFFF;
+    padding: 1em;
+    margin: 0;
+    background-color: #000000;
+    background: linear-gradient( #444444, rgba( 68, 68, 68, 0.21 ) );
+    border-radius: 0.75em 0.75em 0 0;
+    -webkit-border-radius: 0.75em 0.75em 0 0;
+    -moz-border-radius: 0.75em 0.75em 0 0;
+    -ms-border-radius: 0.75em 0.75em 0 0;
+    -o-border-radius: 0.75em 0.75em 0 0;
+}
+
+/********** USER LIST ***********/
+.contacts-widget .contacts-users * {
+    color: #FFFFFF;
+}
+
+.contacts-widget .contacts-users {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contacts-widget .contacts-users > li:nth-child(even) {
+    background-color: #212121;
+}
+
+/******** USER ****************/
+.contacts-widget .contacts-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3em;
+}
+
+.contacts-widget .contacts-users .contacts-user:hover {
+    background-color: #444444;
+}
+
+.contacts-widget .contacts-users:hover .contacts-user:not(:hover) * {
+    opacity: 0.5;
+}
+
+/******** STATUS ***************/
+.contacts-widget .contacts-status {
+    width: 10%;
+    padding: 0.5em 0 0.5em 1.25em;
+}
+
+.contacts-widget .contacts-status > div {
+    height: 0.75em;
+    width: 0.75em;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.contacts-widget .contacts-status > .available {
+    background-color: #00ff1e;
+}
+
+.contacts-widget .contacts-status > .away {
+    background-color: #c3c118;
+}
+
+.contacts-widget .contacts-status > .out {
+    background-color: #ff0000;
+}
+
+/************ NAME *************/
+.contacts-widget .contacts-user .contacts-firstname {
+    padding: 0.5em 0;
+    width: 40%;
+}
+
+/********** INFO *************/
+.contacts-widget .contacts-contact-info {
+    width: 50%;
+    align-self: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0.75em 1em;
+    max-height: 2em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: max-height 0;
+    -webkit-transition: max-height 0;
+    -moz-transition: max-height 0;
+    -ms-transition: max-height 0;
+    -o-transition: max-height 0;
+}
+
+.contacts-widget .contacts-user:hover .contacts-contact-info {
+    transition: max-height 2s ease-out;
+    -webkit-transition: max-height 2s ease-in;
+    -moz-transition: max-height 2s ease-out;
+    -ms-transition: max-height 2s ease-out;
+    -o-transition: max-height 2s ease-out;
+    max-height: 50em;
+    position: relative;
+    top: 0;
+    background-color: #444444;
+    z-index: 2;
+}
+
+.contacts-widget .contacts-user:hover .contacts-contact-info li {
+    color: #FFFFFF;
+}
+
+.contacts-widget .contacts-contact-info li {
+    margin-bottom: 1.5em;
+    color: #565656;
+}
+
+.contacts-widget .contacts-contact-info li:last-of-type {
+    margin-bottom: 0;
+}
+
+.contacts-widget .contacts-contact-info .contacts-email.active {
+    order: -1;
+}
+
+.contacts-widget .contacts-contact-info .contacts-phone.active {
+    order: -1;
+}
+
+.contacts-widget .contacts-footer {
+    text-align: right;
+    background-color: #2c2c2c;
+    border-radius: 0 0 1.5em 1.5em;
+    -webkit-border-radius: 0 0 1.5em 1.5em;
+    -moz-border-radius: 0 0 1.5em 1.5em;
+    -ms-border-radius: 0 0 1.5em 1.5em;
+    -o-border-radius: 0 0 1.5em 1.5em;
+}
+
+.contacts-widget .contacts-info-switch {
+    margin: 1.25em;
+}
+
+/******** OVERLAY *********************/
