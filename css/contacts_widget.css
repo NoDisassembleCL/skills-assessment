@@ -8,7 +8,7 @@ body {
 
 .contacts-widget {
     width: 100%;
-    max-width: 375px;
+    max-width: 500px;
     background: #131313;
     border: 2px solid #4d4d4d;
     border-radius: 1.5em;
@@ -51,9 +51,12 @@ body {
 
 /******** USER ****************/
 .contacts-widget .contacts-user {
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
     height: 3em;
 }
 
@@ -93,10 +96,14 @@ body {
 
 /********** INFO *************/
 .contacts-widget .contacts-contact-info {
-    align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;    
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: justify;
+        justify-content: space-between;    
     width: 50%;
     max-height: 1.25em;
     overflow: hidden;
@@ -125,11 +132,13 @@ body {
 }
 
 .contacts-widget .contacts-contact-info .contacts-email.active {
-    order: -1;
+    -ms-flex-order: -1;
+        order: -1;
 }
 
 .contacts-widget .contacts-contact-info .contacts-phone.active {
-    order: -1;
+    -ms-flex-order: -1;
+        order: -1;
 }
 
 /********** FOOTER **********/
